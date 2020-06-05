@@ -21,4 +21,3 @@ class AnimeTableSeeder extends Seeder
         });
     }
 }
-//Animeモデル、Commnetモデルで各カラムを（=> 'required'）してしまっているので、テストデータの格納ができていない。'

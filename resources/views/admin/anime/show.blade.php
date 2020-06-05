@@ -10,6 +10,7 @@
             <p class="mb-5">
                 {{ \Str::limit($post->body, 250) }}
             </p>
+            {{--編集をクリック=>edit actionを呼び出す=>edit.blade.phpを呼び出して編集画面の表示--}}
             
             <section>
                 <h2 class="h5 mb-4">

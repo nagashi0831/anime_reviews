@@ -20,9 +20,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('anime/create', 'Admin\AnimeController@create');
     Route::get('anime/test','Admin\AnimeController@test');
     Route::get('anime','Admin\AnimeController@index');
-    Route::get('anime','Admin\AnimeController@show');
+    Route::get('anime/comment','Admin\AnimeController@show');
     Route::post('anime','Admin\CommentsController@store');
-    
+    Route::get('anime/edit','Admin\AnimeController@edit');
+    Route::post('anime/edit', 'Admin\AnimeController@update');
     
 });
 

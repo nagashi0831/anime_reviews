@@ -63,5 +63,41 @@ class AnimeController extends Controller
             ]);
         
     }
+    //編集ボタンを押したときに呼び出されるアクション。idが見つからなかったときにabort(404)を出力する
+    public function edit(Request $request){
+        $anime = Anime::find($request->id);
+        if (empty($anime)) {
+            abort(404);
+        }
+        return view('admin.anime.edit',['anime_form' => 
+        $anime]);
+    }
+    
+    public function update(Request $request){
+        //validateをかける
+        $this->validate($request, Anime::$rules);
+        // Anime Modelからデータを取得する
+        $anime = Anime::find($request->id);
+        // 送信されてきたフォームデータを格納する
+        $anime_form = $request->all();
+        //imageに関してはedit.blade.php line43参照
+        if (isset($anime_form['image'])) {
+            $path = $request->file('image')
+            ->store('public/image');
+            $anime->image_path = basename($path);
+            //変更前の画像データを削除
+            unset($anime_form['image']);
+            //removeに関してはedit.blade.php line50参照
+        } elseif (isset($request->remove)) {
+            $anime->image_path = null;
+            unset($anime_form['remove']);
+        }
+        unset($anime_form['_token']);
+        
+        //該当するデータを上書きして保存する
+        $anime->fill($anime_form)->save();
+        
+        return redirect('admin/anime');
+    }
     
 }
