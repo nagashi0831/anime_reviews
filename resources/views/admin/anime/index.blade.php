@@ -39,6 +39,9 @@
                 <a href="{{ action('Admin\AnimeController@edit',['id' => $post->id])
                  }}">編集</a>
             　　</div>
+            　　<div>
+            　　 <a href="{{ action('Admin\AnimeController@delete',"   
+            　　</div>
            </div>
        </div>
        @endforeach
