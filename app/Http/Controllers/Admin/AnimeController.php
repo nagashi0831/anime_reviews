@@ -18,7 +18,7 @@ class AnimeController extends Controller
         $this->validate($request, Anime::$rules);
         $anime = new Anime;
         $form = $request->all();
-        
+        // フォームから画像が送信されてきたら、保存して、$anime->image_path に画像のパスを保存する
         if (isset($form['image'])){
             $path = $request->file('image')->store('public/image');
             $anime->image_path = basename($path);
@@ -51,6 +51,8 @@ class AnimeController extends Controller
             //それ以外はすべてのニュースを取得する
             $posts = Anime::all();
         }
+        //ページネーション処理
+        $posts = Anime::orderBy('created_at','desc')->paginate(10);
        return view('admin.anime.index',['posts' => $posts, 
        'cond_title' =>$cond_title]);
     }
@@ -63,6 +65,7 @@ class AnimeController extends Controller
             ]);
         
     }
+  
     //編集ボタンを押したときに呼び出されるアクション。idが見つからなかったときにabort(404)を出力する
     public function edit(Request $request){
         $anime = Anime::find($request->id);
@@ -99,5 +102,19 @@ class AnimeController extends Controller
         
         return redirect('admin/anime');
     }
+    
+    public function delete(Request $request){
+        //該当するAnime Modelを取得
+        $anime = Anime::find($request->id);
+        //削除する
+        \DB::transaction(function() use($anime){
+        $anime->comments()->delete();    
+        $anime->delete();    
+        });
+        
+        return redirect('admin/anime');
+        
+    }
+    //コメント
     
 }

@@ -35,15 +35,17 @@
                </span>
                @endif
                <div>
-                {{-- action('Admin\AnimeController@edit',['id' => $anime->id]) とするとエラー発生したので、['id' => ~~] を消した。--}}
-                <a href="{{ action('Admin\AnimeController@edit',['id' => $post->id])
+                  {{-- ['id' => $post->id]は「$postのidカラムの値をeditもしくはdeleteアクションで呼び出される'id'の値とする」ということである--}}
+                 <a href="{{ action('Admin\AnimeController@edit',['id' => $post->id])
                  }}">編集</a>
-            　　</div>
-            　　<div>
-            　　 <a href="{{ action('Admin\AnimeController@delete',"   
+                  <a href="{{ action('Admin\AnimeController@delete',['id' => $post->id])
+                 }}">削除</a>
             　　</div>
            </div>
        </div>
        @endforeach
+       <div class="d-flex justify-content-center mb-5">
+           {{ $posts->links() }}
+       </div> 
    </div>
   @endsection

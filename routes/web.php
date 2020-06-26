@@ -24,7 +24,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('anime','Admin\CommentsController@store');
     Route::get('anime/edit','Admin\AnimeController@edit');
     Route::post('anime/edit', 'Admin\AnimeController@update');
-    
+    Route::get('anime/delete', 'Admin\AnimeController@delete');
+    Route::resource('anime/comment', 'AnimeController@show', ['only' => ['create', 'store', 'show']]);
 });
 
 Auth::routes();

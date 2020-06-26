@@ -29,6 +29,8 @@ class CreateAnimesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('comments');
         Schema::dropIfExists('animes');
+        
     }
 }
