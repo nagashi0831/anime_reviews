@@ -20,7 +20,7 @@
                    {{ \Str::limit($post->body, 250) }}
                </p>
                
-               <a class="card-link" href="{{ action('Admin\AnimeController@show') }}">
+               <a class="card-link" href="{{ action('Admin\AnimeController@show',['id' => $post->id]) }}">
                   続きを読む
                </a>
            </div>

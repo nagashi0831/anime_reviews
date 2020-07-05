@@ -39,14 +39,7 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.card-body {
-  color: black;
+.card {
+  color: #000;
 }
 
-.card-header {
-  color: black;
-}
-
-.card-footer {
-  color: black;
-}

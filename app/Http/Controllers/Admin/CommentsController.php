@@ -17,7 +17,7 @@ class CommentsController extends Controller
             
             $comment->fill($form);
             $comment->save();
-            return redirect('admin/anime');
+            return redirect('admin/anime/comment?id='.$comment->anime_id);
     }
 }
 //

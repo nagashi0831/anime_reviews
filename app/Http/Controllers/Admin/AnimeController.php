@@ -57,9 +57,12 @@ class AnimeController extends Controller
        'cond_title' =>$cond_title]);
     }
     
-    public function show($anime_id=1)
+    public function show(Request $request)
     {
-        $post = Anime::findOrFail($anime_id);
+        $post = Anime::find($request->id);
+        if (empty($post)) {
+            abort(404);
+        }
         return view('admin.anime.show',[
             'post' => $post,
             ]);
