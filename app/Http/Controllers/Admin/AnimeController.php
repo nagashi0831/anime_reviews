@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Anime;
+use Storage;
+
 class AnimeController extends Controller
 {
     public function add()
@@ -20,8 +22,8 @@ class AnimeController extends Controller
         $form = $request->all();
         // フォームから画像が送信されてきたら、保存して、$anime->image_path に画像のパスを保存する
         if (isset($form['image'])){
-            $path = $request->file('image')->store('public/image');
-            $anime->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $anime->image_path = Storage::disk('s3')->url($path);
         } else{
             $anime->image_path = null;
         }
@@ -88,9 +90,8 @@ class AnimeController extends Controller
         $anime_form = $request->all();
         //imageに関してはedit.blade.php line43参照
         if (isset($anime_form['image'])) {
-            $path = $request->file('image')
-            ->store('public/image');
-            $anime->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$anime_form['image'],'public');
+            $anime->image_path = Storage::disk('s3')->url($path);
             //変更前の画像データを削除
             unset($anime_form['image']);
             //removeに関してはedit.blade.php line50参照

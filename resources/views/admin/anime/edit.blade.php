@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
             <h2>投稿の編集</h2>
-            /*formタグでupdate actionを呼び出す */
+            {{--formタグでupdate actionを呼び出す --}}
             <form action="{{
             action('Admin\AnimeController@update') }}" method="post"
              enctype="multipart/form-data">

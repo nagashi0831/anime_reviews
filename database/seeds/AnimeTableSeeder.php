@@ -13,7 +13,7 @@ class AnimeTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Anime::class, 50)
+        factory(Anime::class, 1)
         ->create()
         ->each(function ($post) {
             $comments = factory(Comment::class, 20)->make();
