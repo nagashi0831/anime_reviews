@@ -19,6 +19,8 @@ class CreateAnimesTable extends Migration
             $table->string('body');
             $table->string('image_path')->nullable();
             $table->timestamps();
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'レビュー作品一覧')
+@section('title', 'My Post(私の投稿)')
 
 @section('content')
    <div class="container mt-4">

@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('anime/edit','Admin\AnimeController@edit');
     Route::post('anime/edit', 'Admin\AnimeController@update');
     Route::get('anime/delete', 'Admin\AnimeController@delete');
+    Route::get('anime/mypost', 'Admin\UsersController@mypost');
 });
 
 Auth::routes();

@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container mt-4">
+    <a class="card-link" href="{{ action('Admin\AnimeController@index') }}">
+        ↩アニメ一覧に戻る
+    </a>
     <div class="border p-4">
             <h1 class="h5 mb-4">
                 {{ $post->title }}

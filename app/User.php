@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    //投稿者は複数の投稿をもつ
+    public function posts()
+    {
+        return $this->hasMany('App\Anime');
+    }
 }

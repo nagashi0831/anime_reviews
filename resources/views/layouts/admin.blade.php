@@ -66,6 +66,11 @@
                                      style="display: none;">
                                         @csrf
                                     </form>
+                                    
+                                    <a class="dropdown-item" href="{{ action('Admin\UsersController@mypost') }}">
+                                        {{ __('My Post') }}
+                                    </a>
+                                
                                 </div>
                             </li>
                             @endguest

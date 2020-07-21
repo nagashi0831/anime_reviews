@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             
             $table->timestamps();
             
-            $table->foreign('anime_id')->references('id')->on('animes')->onDelete('cascade');
+            $table->foreign('anime_id')->references('id')->on('animes');
         });
     }
 
