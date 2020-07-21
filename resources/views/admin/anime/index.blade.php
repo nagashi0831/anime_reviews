@@ -38,13 +38,6 @@
                   　コメント {{ $post->comments->count() }}件
                </span>
                @endif
-               <div>
-                  {{-- ['id' => $post->id]は「$postのidカラムの値をeditもしくはdeleteアクションで呼び出される'id'の値とする」ということである--}}
-                 <a href="{{ action('Admin\AnimeController@edit',['id' => $post->id])
-                 }}">編集</a>
-                  <a href="{{ action('Admin\AnimeController@delete',['id' => $post->id])
-                 }}">削除</a>
-            　　</div>
            </div>
        </div>
        @endforeach
