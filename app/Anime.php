@@ -10,7 +10,12 @@ class Anime extends Model
     public static $rules = array(
         'title' => 'required',
         'body' => 'required',
+        'category' => 'required',
         );
+        
+        public function user(){
+            return $this->belongsTo('App\User');
+        }
         
         public function comments()
         {

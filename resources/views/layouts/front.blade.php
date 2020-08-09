@@ -35,49 +35,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/">とっぷぺーじ<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">とっぷぺーじ<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ action('Admin\AnimeController@index', ['category' => 'action']) }}">アクション/バトル</a>
+                <a class="nav-link" href="#">アクション/バトル</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">恋愛/ラブコメ<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ action('Admin\AnimeController@index', ['category' => 'love']) }}">恋愛/ラブコメ<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">コメディ/ギャグ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ action('Admin\AnimeController@index', ['category' => 'comedy']) }}">コメディ/ギャグ</a>
+                <a class="nav-link disabled" href="#">その他</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="{{ action('Admin\AnimeController@index', ['category' => 'other']) }}">その他</a>
-              </li>
-              @guest
-              {{--以下のLoginは画面右上に表示されるLoginを指している。--}}
-              <li class="nav-item"><a  class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a></li>
-              {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
-              @else
-              <li class="nav-item dropdown">
-                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                   role="button" data-toggle="dropdown" aria-haspopup="true" 
-                   aria-expanded="false" v-pre>
-                      {{ Auth::user()->name }} <span class="caret"></span>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{ route('logout') }}" 
-                      onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                          {{ __('ログアウト') }}
-                      </a>
-                      
-                      <form id="logout-form"
-                       action="{{ route('logout') }}" method="POST" 
-                       style="display: none;">
-                          @csrf
-                      </form>
-                      
-                      <a class="dropdown-item" href="{{ action('Admin\UsersController@mypost') }}">
-                          {{ __('私の投稿いちらん') }}
-                      </a>
-                  </div>
-              </li>
-              @endguest
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -88,5 +59,6 @@
             <main class="py-4">
                 @yield('content')
             </main>
+        
     </body>
 </html>

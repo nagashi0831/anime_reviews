@@ -29,6 +29,20 @@
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2">
+                        カテゴリー
+                    </label>
+                    <div class="col-md-5">
+                        <select name="category">
+                            <option value="">選択してください</option>
+                            <option value="action">アクション/バトル</option>
+                            <option value="love">恋愛/ラブコメ</option>
+                            <option value="comedy">コメディ/ギャグ</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2">
                         紹介文
                     </label>
                     <div class="col-md-10">

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Admin\AnimeController@front');
 
 //誰でも見られる部分
 Route::group(['prefix' => 'admin'], function() {

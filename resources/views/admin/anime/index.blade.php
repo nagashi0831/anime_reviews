@@ -3,7 +3,7 @@
 
 @section('content')
    <div class="container mt-4">
-      <div class="mb-4">
+      <div class="pt-4 pb-4">
          <a href="{{ action('Admin\AnimeController@add') }}" role="button" class="btn btn-primary">
             新規作成
             </a>

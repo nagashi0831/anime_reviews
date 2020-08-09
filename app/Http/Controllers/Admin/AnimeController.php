@@ -52,12 +52,12 @@ class AnimeController extends Controller
         if($cond_title != ''){
             //検索されたら検索結果を取得する
             $posts = Anime::where('title',$cond_title)->get();
+        } elseif($request->category != null){
+            $posts = Anime::where('category',$request->category)->orderBy('created_at','desc')->paginate(10);
         } else{
-            //それ以外はすべてのニュースを取得する
-            $posts = Anime::all();
+            //それ以外はすべての投稿を取得する
+            $posts = Anime::orderBy('created_at','desc')->paginate(10);
         }
-        //ページネーション処理
-        $posts = Anime::orderBy('created_at','desc')->paginate(10);
        return view('admin.anime.index',['posts' => $posts, 
        'cond_title' =>$cond_title]);
     }
@@ -121,6 +121,12 @@ class AnimeController extends Controller
         
         return redirect('admin/anime');
         
+    }
+    
+    public function front(Request $request){
+        //get()でデータ取得
+        $posts = Anime::orderBy('created_at','desc')->get();
+       return view('admin.anime.front',['posts' => $posts]);
     }
     
 }
