@@ -17,6 +17,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600"
         rel="stylesheet" type="text/css">
         
+        
         <link href="{{ secure_asset('css/app.css') }}"
         rel="stylesheet">
         <link href="{{ secure_asset('css/admin.css') }}"
@@ -35,19 +36,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">とっぷぺーじ<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">とっぷぺーじ<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">アクション/バトル</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#">恋愛/ラブコメ<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ action('Admin\AnimeController@index', ['category' => 'action']) }}">アクション/バトル</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">コメディ/ギャグ</a>
+                <a class="nav-link" href="{{ action('Admin\AnimeController@index', ['category' => 'love']) }}">恋愛/ラブコメ<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">その他</a>
+                <a class="nav-link" href="{{ action('Admin\AnimeController@index', ['category' => 'comedy']) }}">コメディ/ギャグ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="{{ action('Admin\AnimeController@index', ['category' => 'other']) }}">その他</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
