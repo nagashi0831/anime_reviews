@@ -28,7 +28,7 @@
     <body>
         <!-- ナビゲーションバーの設定 -->
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-dark">
-          <a class="navbar-brand" href="#">あにれびゅ！</a>
+          <div class="nav-logo" href="#">あにれびゅ！</div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -50,6 +50,35 @@
               <li class="nav-item">
                 <a class="nav-link disabled" href="{{ action('Admin\AnimeController@index', ['category' => 'other']) }}">その他</a>
               </li>
+              @guest
+              {{--以下のLoginは画面右上に表示されるLoginを指している。--}}
+              <li class="nav-item"><a  class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a></li>
+              {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+              @else
+              <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                   role="button" data-toggle="dropdown" aria-haspopup="true" 
+                   aria-expanded="false" v-pre>
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('logout') }}" 
+                      onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                          {{ __('ログアウト') }}
+                      </a>
+                      
+                      <form id="logout-form"
+                       action="{{ route('logout') }}" method="POST" 
+                       style="display: none;">
+                          @csrf
+                      </form>
+                      
+                      <a class="dropdown-item" href="{{ action('Admin\UsersController@mypost') }}">
+                          {{ __('私の投稿いちらん') }}
+                      </a>
+                  </div>
+              </li>
+              @endguest
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

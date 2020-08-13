@@ -21,13 +21,11 @@
         rel="stylesheet">
         <link href="{{ secure_asset('css/admin.css') }}"
         rel="stylesheet">
-        <link href="{{ secure_asset('css/front.css') }}"
-        rel="stylesheet">
     </head>
     <body>
         <!-- ナビゲーションバーの設定 -->
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-dark">
-          <a class="navbar-brand" href="#">あにれびゅ！</a>
+          <a class="navbar-brand nav-logo" href="#">あにれびゅ！</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

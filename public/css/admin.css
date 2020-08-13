@@ -1,7 +1,7 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #e3f542;
+  background-color: #fff;
   color: #fff;
 }
 
@@ -16,6 +16,10 @@ body {
 
 .nav-link {
   color: #fff !important;
+}
+
+.nav-item {
+  font-weight: bold;
 }
 
 .table-dark {
@@ -46,4 +50,19 @@ body {
 .login-box {
   color: #fff;
 }
+/*投稿フォームの添え字*/
+.form-group {
+  color: #0067C0;
+}
+/*ナビゲーションバー上のロゴ*/
+.nav-logo {
+  margin-right: 30px;
+  color:yellow;
+  font-weight: bold;
+}
 
+.create-link {
+  margin-right:20px;
+  font-size: 25px;
+  font-weight: bold;
+}
