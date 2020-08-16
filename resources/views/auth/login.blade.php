@@ -59,14 +59,16 @@
                                     {{ __('messages.Login') }}
                                     
                                 </button>
-
-                                
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+            <div class="flex-center">
+            <a href="/line_login">LINEでログイン</a>
+            </div> 
         </div>
+        
     </div>
 </div>
 @endsection

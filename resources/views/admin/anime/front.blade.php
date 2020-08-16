@@ -43,5 +43,6 @@
         <br>感動をみんなで共有しましょう！
     </h4>
     <img class="col-xl-12" src="/storage/image/anireview_info.png">
+    <a href="/storage/image/anireview_info.png">上記の画像が小さいときはコチラをクリック</a>
 </div>
 @endsection
