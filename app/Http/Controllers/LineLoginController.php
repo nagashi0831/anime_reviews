@@ -74,7 +74,7 @@ class LineLoginController extends Controller
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         
         $res = curl_exec($curl);
-        url_close($curl);
+        curl_close($curl);
         
         $json = json_decode($res);
         return $json;
