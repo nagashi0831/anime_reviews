@@ -88,6 +88,6 @@ class LineLoginController extends Controller
         //プロフィール取得
         $profile = $this->getProfile($accessToken);
         
-        return view('/', compact('profile'));
+        return view('admin.anime.front', compact('profile'));
     }
 }
