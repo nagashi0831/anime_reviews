@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+            <div class="card mt-5">
+                <div class="card-header">登録完了！</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-md-8 col-md-offset-4">
                     <a class="btn btn-default" href="/login/line">
-                        Add Line Login
+                        LINEアカウントを追加する
                     </a>
                     <!-- <a class="btn btn-default" href="/login/twitter">
                         Add twitter Login

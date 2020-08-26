@@ -46,6 +46,10 @@ body {
 .card {
   color: #000;
 }
+/*続きを見るを押した後の本文*/
+.body-message {
+  color: #000;
+}
 
 .login-box {
   color: #fff;

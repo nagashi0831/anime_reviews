@@ -10,7 +10,7 @@
                 {{ $post->title }}
             </h1>
             
-            <p class="mb-5">
+            <p class="body-message mb-5">
                 {{ \Str::limit($post->body, 250) }}
             </p>
             {{--編集をクリック=>edit actionを呼び出す=>edit.blade.phpを呼び出して編集画面の表示--}}
