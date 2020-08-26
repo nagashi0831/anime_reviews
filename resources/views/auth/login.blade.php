@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="login-box card">
+            <div class="login-box card mt-4">
                 <div class="login-header card-header mx-auto">{{ __('messages.Login') }}</div>
 
                 <div class="login-body card-body">
@@ -59,16 +59,16 @@
                                     {{ __('messages.Login') }}
                                     
                                 </button>
+                                <a class="btn btn-success" href="/login/line">LINE LOGIN</a>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="flex-center">
-            <a href="/line_login">LINEでログイン</a>
-            </div> 
+            <div class="text-center">
+                <a class="btn btn-primary mt-3" href="/register">新規登録はこちらから</a>
+            </div>
         </div>
-        
     </div>
 </div>
 @endsection

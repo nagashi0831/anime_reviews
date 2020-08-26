@@ -35,6 +35,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //LINEログインルート
-Route::get('/line_login', 'LineLoginController@lineLogin')->name('line_login');
-Route::get('/callback', 'LineLoginController@callback')->name('callback');
+Route::get('/login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
+Route::get('/login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
 

@@ -16,6 +16,14 @@
 
                     You are logged in!
                 </div>
+                <div class="col-md-8 col-md-offset-4">
+                    <a class="btn btn-default" href="/login/line">
+                        Add Line Login
+                    </a>
+                    <!-- <a class="btn btn-default" href="/login/twitter">
+                        Add twitter Login
+                    </a>       -->
+                </div>
             </div>
         </div>
     </div>
