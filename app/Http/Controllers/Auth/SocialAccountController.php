@@ -22,10 +22,13 @@ class SocialAccountController extends Controller
         try {
             /*ログインしようとしているアカウントのユーザー情報。find関数では$user->getId()でprovider_idを呼び出す。
             link関数では$user->getIdでprovider_id属性の値に代入する*/
-            $user = \Socialite::with($provider)->user();
+            if ($provider == "twitter") {
+                $user = \Socialite::with($provider)->user();
+            } else {
+                $user = \Socialite::with($provider)->stateless()->user();
+            }
         } catch(\Exception $e) {
             echo $e->getMessage();
-            return redirect('/');
         }
         
         $authUser = $accountService->find($user, $provider);
@@ -39,13 +42,13 @@ class SocialAccountController extends Controller
             if ($request->user()) { /*既ログインの場合、連携アカウントとして登録し、アカウントに紐付ける
                                     $request->user()は認証済みユーザーのインスタンスを返す*/
                 if ($accountService->link($request->user(), $user, $provider)) {
-                    return redirect('/');
+                    return redirect('/login')->with('success', $provider."アカウント連携が完了しました。次回以降ログインの際は".$provider." LOGINをご利用できます");
                 } else { /*既に同じサービスでのアカウント登録があり、紐づけ失敗
                 (一つのアカウントで二つのLINEアカウントに登録しようとしている)*/
-                    return redirect('/')->withErrors(['social' => 'LINEでの連携ログインがすでに登録されています']);
+                    return redirect('/login')->withErrors(['social' => 'LINEでの連携ログインがすでに登録されています']);
                 }
             } else { //未ログイン
-                redirect('/admin/index');
+                return redirect('/login')->withErrors(['social' => "連携アカウントが登録されていません。通常ログインを実施後、".$provider." LOGIN より連携アカウントを登録してください。"]);
             }
             
         }

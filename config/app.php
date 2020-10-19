@@ -192,7 +192,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         //ラインサービスプロバイダ
         Add_on\Socialite\Line\LineServiceProvider::class,
-        \SocialiteProviders\Manager\ServiceProvider::class,
+        
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*

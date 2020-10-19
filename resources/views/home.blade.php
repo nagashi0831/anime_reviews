@@ -20,9 +20,9 @@
                     <a class="btn btn-default" href="/login/line">
                         LINEアカウントを追加する
                     </a>
-                    <!-- <a class="btn btn-default" href="/login/twitter">
+                    <a class="btn btn-default" href="/login/twitter">
                         Add twitter Login
-                    </a>       -->
+                    </a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,145 @@
+Array
+(
+    [message] => Authentication fails. Please set authentication header.
+)
+Array
+(
+    [message] => Authentication fails. Please set authentication header.
+)
+errorerrorだよちんちんArray
+(
+    [foo] => bar
+    [bar] => foo
+)
+Array
+(
+    [message] => Authentication fails. Please set authentication header.
+)
+Array
+(
+    [message] => Authentication fails. Please set authentication header.
+)
+Array
+(
+    [message] => Authentication fails. Please set authentication header.
+)
+Array
+(
+    [error] => invalid_grant
+    [error_description] => invalid authorization code
+)
+Array
+(
+    [message] => Authentication fails. Please set authentication header.
+)
+Array
+(
+    [error] => invalid_grant
+    [error_description] => invalid authorization code
+)
+Array
+(
+    [message] => Authentication fails. Please set authentication header.
+)
+Array
+(
+    [error] => invalid_grant
+    [error_description] => invalid authorization code
+)
+https://api.line.me/oauth2/v2.1/token{"error":"invalid_grant","error_description":"invalid authorization code"}Array
+(
+    [grant_type] => authorization_code
+    [code] => UGI05keQzRAdLOCiRE6V
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"invalid authorization code"}Array
+(
+    [grant_type] => authorization_code
+    [code] => wshdQWm1HBWVxoP660ma
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"invalid authorization code"}Array
+(
+    [grant_type] => authorization_code
+    [code] => TGWgwIcmHvnl2mXhCDmu
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"authorization code expired or incompatible"}Array
+(
+    [grant_type] => authorization_code
+    [code] => TGWgwIcmHvnl2mXhCDmu
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"invalid authorization code"}Array
+(
+    [grant_type] => authorization_code
+    [code] => GhN2YiE80NlsgeFdIFPq
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"authorization code expired or incompatible"}Array
+(
+    [grant_type] => authorization_code
+    [code] => GhN2YiE80NlsgeFdIFPq
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"invalid authorization code"}Array
+(
+    [grant_type] => authorization_code
+    [code] => vsMJFowoyreDSGdc291L
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"authorization code expired or incompatible"}Array
+(
+    [grant_type] => authorization_code
+    [code] => PVWHSucaieL3vW5nM1zz
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"authorization code expired or incompatible"}Array
+(
+    [grant_type] => authorization_code
+    [code] => PVWHSucaieL3vW5nM1zz
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"invalid authorization code"}Array
+(
+    [grant_type] => authorization_code
+    [code] => PVWHSucaieL3vW5nM1zz
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"invalid authorization code"}Array
+(
+    [grant_type] => authorization_code
+    [code] => Znt1tq1MBF3FjVUVETNY
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"authorization code expired or incompatible"}Array
+(
+    [grant_type] => authorization_code
+    [code] => Znt1tq1MBF3FjVUVETNY
+    [redirect_uri] => https://0e5da5d87ed64d95a1733d340b8c8b29.vfs.cloud9.us-east-2.amazonaws.com/login/line/callback
+    [client_id] => 1654897415
+    [client_secret] => 57d7505ce103cdb23d171dcb5c18cc18
+)
+{"error":"invalid_grant","error_description":"invalid authorization code"}{"error":"invalid_request","error_description":"code is required."}{"error":"invalid_request","error_description":"code is required."}{"error":"invalid_request","error_description":"code is required."}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"access_token":"PmisugscMQhLOpgWNXR+V+mRALnsnsiPJwmfLn2wZv761eAUUZQBFE+dVYizM6+yckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVQaJ/hS/k8p3Phz1hVRfjb7Av5eUBzsTZ3howFTYhpB5Cefs2XXx5uTFHaVeg726Q=","expires_in":2592000,"refresh_token":"r6c7P+AGrWJpb40Ho7JtUDK02H0bLSGCqoheeVYxZ8FUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"PmisugscMQhLOpgWNXR+V+mRALnsnsiPJwmfLn2wZv761eAUUZQBFE+dVYizM6+yckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVQaJ/hS/k8p3Phz1hVRfjb7Av5eUBzsTZ3howFTYhpB5Cefs2XXx5uTFHaVeg726Q=","expires_in":2589885,"refresh_token":"r6c7P+AGrWJpb40Ho7JtUDK02H0bLSGCqoheeVYxZ8FUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"access_token":"EtbiDw1Inx+/kKnKGvZro8Hk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdX9cr/JcD6dIXxhgk9J3BqnK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2592000,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"error":"invalid_grant","error_description":"invalid authorization code"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2591968,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2591907,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"error":"invalid_grant","error_description":"invalid authorization code"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2591636,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2591179,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2591028,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"error":"invalid_grant","error_description":"invalid authorization code"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2590824,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_request","error_description":"some parameters missed or invalid"}{"error":"invalid_grant","error_description":"invalid authorization code"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2590202,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2589738,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2589363,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2574053,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":2573476,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}{"access_token":"XVt1h+P52lzdRDJPUuOEZsHk2Ij++NPSJm+FIb74MYV48r7t5dsyc9R8xgg6nZ74ckMx2XmL5hkjRSvkzzBSuqdh1jGoa/G8GDjc2pomWdVMHmzFUonTwSBu23+NRsevK9Sapc6nkdM2lFYpSojxUpCefs2XXx5uTFHaVeg726Q=","expires_in":1901657,"refresh_token":"9ulv8SpHYRwipOPTFpJQb2uC5pXGx/6OWaHE8vnZMxtUMIMYelT0qz8wJRSXKF1KAe/t7K2KJPHa88bZxO30BH/s/GQvSCvhi306yuywTRo=","scope":"P OC","token_type":"Bearer"}

@@ -20,7 +20,7 @@ class AnimeController extends Controller
         
         $this->validate($request, Anime::$rules);
         $anime = new Anime;
-        //下記のuser()はAnime　Modelのuser()関数
+        //下記のuser()はAnime　Modelのuser()関数 関連するUserインスタンスのidプロパティをAnimeインスタンスのuser_idプロパティとして保存している。
         $anime->user_id = $request->user()->id;
         $form = $request->all();
         // フォームから画像が送信されてきたら、保存して、$anime->image_path に画像のパスを保存する
@@ -110,6 +110,7 @@ class AnimeController extends Controller
         return redirect('admin/anime');
     }
     
+    
     public function delete(Request $request){
         //該当するAnime Modelを取得
         $anime = Anime::find($request->id);
@@ -126,7 +127,7 @@ class AnimeController extends Controller
     public function front(Request $request){
         //get()でデータ取得
         $posts = Anime::orderBy('created_at','desc')->get();
-       return view('admin.anime.front',['posts' => $posts]);
+        return view('admin.anime.front',['posts' => $posts]);
     }
     
 }
