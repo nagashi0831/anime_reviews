@@ -16,8 +16,8 @@
                {{ $post->title }} {{--アニメのタイトル--}}
            </div>
            @if ($post->image_path != null)
-           <img src="/storage/image/{{ $post->image_path }}" width="100px"
-            height="100px">
+           <img src="/storage/image/{{ $post->image_path }}" width="200px"
+            height="100%">
             @endif
            <div class="card-body">
                <p class="card-text">

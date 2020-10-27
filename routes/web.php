@@ -16,9 +16,8 @@ Route::get('/', 'Admin\AnimeController@front');
 //誰でも見られる部分
 Route::group(['prefix' => 'admin'], function() {
     Route::get('anime','Admin\AnimeController@index');
-    Route::post('anime','Admin\CommentsController@store');
+    Route::post('anime/comment','Admin\CommentsController@store');  //なぜanime/commentじゃない？
     Route::get('anime/comment','Admin\AnimeController@show');
-    Route::resource('anime/comment', 'AnimeController@show', ['only' => ['create', 'store', 'show']]);
 });
 
 //ログイン画面にリダイレクト処理するリンク
@@ -37,4 +36,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 //LINEログインルート
 Route::get('/login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
 Route::get('/login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
-

@@ -7,7 +7,7 @@ use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;
 use Laravel\Socialite\Two\User;
 
-
+//AbstractProviderのabstract protected functionによってこのクラスのメソッドは強制されている
 class LineProvider extends AbstractProvider implements ProviderInterface
 {   //認可URL取得(https://developers.line.biz/ja/docs/line-login/integrate-line-login-v2/#%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E3%83%95%E3%83%AD%E3%83%BC)参照
     protected function getAuthUrl($state)
@@ -20,6 +20,8 @@ class LineProvider extends AbstractProvider implements ProviderInterface
         return 'https://api.line.me/v2/oauth/accessToken';
     }
     //レスポンスを配列で取得
+    
+    //アクセストークンレスポンスを得るためのリクエスト配列を作成
     public function getAccessTokenResponse($code){
         
         $headers = [ 'Content-Type: application/x-www-form-urlencoded'];
@@ -49,6 +51,7 @@ class LineProvider extends AbstractProvider implements ProviderInterface
             return $json;
             
     }
+    
     //ユーザーのプロフィール情報をアクセストークンから取得
     public function getUserByToken($at){
         
@@ -67,8 +70,11 @@ class LineProvider extends AbstractProvider implements ProviderInterface
 
     }
     
+    /*引数の$userはgetUserByTokenの返り値としてAbstractProviderで設定される。
+    => getUseByTokeメソッドで得たユーザ情報からユーザID、LINE名、プロフィール画像を取り出す*/
     public function mapUserToObject(array $user)
     {   
+        
         return (new User())->setRaw($user)->map([
             'id' => $user['userId'],
             'name' => $user['displayName'],

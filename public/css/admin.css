@@ -70,3 +70,8 @@ body {
   font-size: 25px;
   font-weight: bold;
 }
+
+.copyright {
+  color: black;
+  text-align: center;
+}

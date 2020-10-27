@@ -15,6 +15,7 @@
         "laravel/socialite": "^4.4",
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
+        "pusher/pusher-php-server": "~3.0",
         "socialiteproviders/line": "^2.1"
     },
     "require-dev": {

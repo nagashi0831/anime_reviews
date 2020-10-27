@@ -51,7 +51,7 @@ class AnimeController extends Controller
         
         if($cond_title != ''){
             //検索されたら検索結果を取得する
-            $posts = Anime::where('title',$cond_title)->get();
+            $posts = Anime::where('title',$cond_title)->paginate(10);
         } elseif($request->category != null){
             $posts = Anime::where('category',$request->category)->orderBy('created_at','desc')->paginate(10);
         } else{
@@ -117,7 +117,7 @@ class AnimeController extends Controller
         //削除する
         \DB::transaction(function() use($anime){
         $anime->comments()->delete();    
-        $anime->delete();    
+        $anime->delete();
         });
         
         return redirect('admin/anime');

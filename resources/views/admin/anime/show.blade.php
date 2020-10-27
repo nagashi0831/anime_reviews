@@ -21,7 +21,7 @@
                     コメント
                 </h2>
         </div>
-            <form class="mb-4" method="POST" action="{{ action('Admin\CommentsController@store') }}">
+            <form class="mb-4" method="POST" action="{{ url('/admin/anime/comment') }}">
                 @csrf
             
                 <input
