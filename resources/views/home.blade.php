@@ -14,14 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    ログイン完了です！
                 </div>
                 <div class="col-md-8 col-md-offset-4">
-                    <a class="btn btn-default" href="/login/line">
-                        LINEアカウントを追加する
+                    <a class="btn btn-success" href="/login/line">
+                        LINEアカウントを連携させる
                     </a>
-                    <a class="btn btn-default" href="/login/twitter">
-                        Add twitter Login
+                    <a class="btn btn-primary" href="/login/twitter">
+                        Twitterアカウントを連携させる
                     </a>
                 </div>
             </div>
