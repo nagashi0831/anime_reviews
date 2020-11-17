@@ -16,7 +16,7 @@ Route::get('/', 'Admin\AnimeController@front');
 //誰でも見られる部分
 Route::group(['prefix' => 'admin'], function() {
     Route::get('anime','Admin\AnimeController@index');
-    Route::post('anime/comment','Admin\CommentsController@store');  //なぜanime/commentじゃない？
+    Route::post('anime/comment','Admin\CommentsController@store');  
     Route::get('anime/comment','Admin\AnimeController@show');
 });
 
@@ -28,6 +28,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('anime/edit', 'Admin\AnimeController@update');
     Route::get('anime/delete', 'Admin\AnimeController@delete');
     Route::get('anime/mypost', 'Admin\UsersController@mypost');
+    Route::get('anime/message/{partner}', 'Admin\MessagesController@index');
+    Route::post('anime/message/send', 'Admin\MessagesController@store');
+    Route::get('anime/index', 'Admin\MessagesController@indexMem');
 });
 
 Auth::routes();

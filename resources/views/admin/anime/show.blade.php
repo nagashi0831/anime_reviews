@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container mt-5">
+<div class="container">
     <a class="card-link" href="{{ action('Admin\AnimeController@index') }}">
         ↩アニメ一覧に戻る
     </a>
@@ -23,7 +23,6 @@
         </div>
             <form class="mb-4" method="POST" action="{{ url('/admin/anime/comment') }}">
                 @csrf
-            
                 <input
                     name="anime_id"
                     type="hidden"

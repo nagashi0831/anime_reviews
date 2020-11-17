@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
+use App\User;
 use App\Anime;
 use Storage;
 
@@ -48,6 +48,7 @@ class AnimeController extends Controller
     {
         //cond_titleは検索窓の内容を取得
         $cond_title = $request->cond_title;
+        $users = User::get();
         
         if($cond_title != ''){
             //検索されたら検索結果を取得する
@@ -59,6 +60,7 @@ class AnimeController extends Controller
             $posts = Anime::orderBy('created_at','desc')->paginate(10);
         }
        return view('admin.anime.index',['posts' => $posts, 
+       'users' => $users,
        'cond_title' =>$cond_title]);
     }
     
