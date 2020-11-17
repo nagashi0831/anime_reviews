@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('anime/mypost', 'Admin\UsersController@mypost');
     Route::get('anime/message/{partner}', 'Admin\MessagesController@index');
     Route::post('anime/message/send', 'Admin\MessagesController@store');
-    Route::get('anime/index', 'Admin\MessagesController@indexMem');
+    Route::get('anime/index', 'Admin\MessagesController@indexMem');//chat一覧画面のルート
 });
 
 Auth::routes();
