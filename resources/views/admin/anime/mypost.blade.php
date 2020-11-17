@@ -2,7 +2,7 @@
 @section('title', 'My Post(私の投稿)')
 
 @section('content')
-   <div class="container mt-4">
+   <div class="container">
       <div class="mb-4">
          <a href="{{ action('Admin\AnimeController@add') }}" role="button" class="btn btn-primary">
             新規作成

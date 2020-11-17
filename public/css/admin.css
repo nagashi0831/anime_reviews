@@ -75,3 +75,50 @@ body {
   color: black;
   text-align: center;
 }
+/*投稿一覧の吹き出し*/
+
+.indexFukidashi {
+  position: relative;
+  display: inline-block;
+  margin: 0 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.indexFukidashi:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+
+@media (max-width: 680px) {
+  .indexFukidashi {
+  position: relative;
+  display: inline-block;
+  margin: 15px 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.indexFukidashi:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+}

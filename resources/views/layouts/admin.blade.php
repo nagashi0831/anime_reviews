@@ -21,9 +21,15 @@
         rel="stylesheet">
         <link href="{{ secure_asset('css/admin.css') }}"
         rel="stylesheet">
+        <style>
+          body {
+            padding-top: 70px;
+          }
+        </style>
     </head>
     <body>
         <!-- ナビゲーションバーの設定 -->
+      <header>
         <nav class="navbar navbar-expand-lg fixed-top  bg-dark">
           <a class="navbar-brand nav-logo" href="/">あにれびゅ！</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,9 +65,13 @@
                       {{ Auth::user()->name }} <span class="caret"></span>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{ route('logout') }}" 
-                      onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                          {{ __('ログアウト') }}
+                      
+                      <a class="dropdown-item" href="{{ action('Admin\MessagesController@indexMem') }}">
+                          {{ __('チャット') }}
+                      </a>
+                      
+                      <a class="dropdown-item" href="{{ action('Admin\UsersController@mypost') }}">
+                          {{ __('私の投稿いちらん') }}
                       </a>
                       
                       <form id="logout-form"
@@ -69,10 +79,11 @@
                        style="display: none;">
                           @csrf
                       </form>
-                      
-                      <a class="dropdown-item" href="{{ action('Admin\UsersController@mypost') }}">
-                          {{ __('私の投稿いちらん') }}
+                      <a class="dropdown-item" href="{{ route('logout') }}" 
+                      onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                          {{ __('ログアウト') }}
                       </a>
+                      
                   </div>
               </li>
               @endguest
@@ -83,11 +94,9 @@
             </form>
           </div>
         </nav>
-            <main class="py-4">
-                @yield('content')
-            </main>
-        <footer>
-          <p class="copyright">&copy; 2020 so-ta</p>
-        </footer>
+      </header>
+          <main class="py-4">
+              @yield('content')
+          </main>
     </body>
 </html>
