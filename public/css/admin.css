@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
   background-repeat: no-repeat;
   background-position: center;
@@ -46,7 +48,9 @@ body {
 .card {
   color: #000;
 }
+
 /*続きを見るを押した後の本文*/
+
 .show-message {
   color: #000;
 }
@@ -54,19 +58,23 @@ body {
 .login-box {
   color: #fff;
 }
+
 /*投稿フォームの添え字*/
+
 .form-group {
   color: #0067C0;
 }
+
 /*ナビゲーションバー上のロゴ*/
+
 .nav-logo {
   margin-right: 30px;
-  color:yellow;
+  color: yellow;
   font-weight: bold;
 }
 
 .create-link {
-  margin-right:20px;
+  margin-right: 20px;
   font-size: 25px;
   font-weight: bold;
 }
@@ -75,6 +83,7 @@ body {
   color: black;
   text-align: center;
 }
+
 /*投稿一覧の吹き出し*/
 
 .indexFukidashi {
@@ -101,24 +110,25 @@ body {
 
 @media (max-width: 680px) {
   .indexFukidashi {
-  position: relative;
-  display: inline-block;
-  margin: 15px 0;
-  padding: 7px 10px;
-  min-width: 120px;
-  max-width: 100%;
-  color: #555;
-  font-size: 16px;
-  background: #e0edff;
+    position: relative;
+    display: inline-block;
+    margin: 15px 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e0edff;
+  }
+
+  .indexFukidashi:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 80%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-top: 15px solid #e0edff;
+  }
 }
 
-.indexFukidashi:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 80%;
-  margin-left: -15px;
-  border: 15px solid transparent;
-  border-top: 15px solid #e0edff;
-}
-}
