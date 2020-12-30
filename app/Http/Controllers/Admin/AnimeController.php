@@ -4,16 +4,40 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Log;
 use App\User;
 use App\Anime;
 use Storage;
+use phpQuery;
+use Goutte\Client;
+
+require_once("/home/ec2-user/environment/anime_review/vendor/autoload.php");
 
 class AnimeController extends Controller
 {
     public function add()
     {
-        return view('admin.anime.create');
+        $client = new Client();
+        $japaSpells = ["a" ,"i" ,"u" ,"e" ,"o" ,"ka" ,"ki" ,"ku" ,"ku" ."ke" ,"ko" ,"sa" ,"shi" ,"su" ,"se" ,"so" ,
+        "ta" ,"chi" ,"tsu" ,"te" ,"to" ,"na" ,"ni" ,"nu" ,"ne" ,"no" ,"ha", "hi" ,"fu" ,"he" ,"ho" ,"ma" ,"mi" ,"mu" ,
+        "me" ,"mo" ,"ya" ,"yu" ,"yo" ,"ra" ,"ri" ,"ru" ,"re" ,"ro" ,"wa" ,"wo" ,"n"];
+        $titles = array();
+        foreach ($japaSpells as $japaSpell) {
+            $url = "https://anime.nicovideo.jp/search/anime/".$japaSpell.".html?from=nanime_anime-search_50";
+            $scraping = $client->request('GET', $url);
+            
+            $title = $scraping->filter('body')->filter('div')->filter('#__layout')
+            ->filter('div')->filter('._2jT-H')->filter('main')->filter('.sa__search-results')
+            ->filter('.sa__search-results__inner')->filter('ul')->filter('li')
+            ->each(function ($title) use (&$titles){
+                $title = $title->filter('a');
+                if (count($title)) {
+                    array_push($titles, $title->text());
+                }
+            });
+        }
+        
+        return view('admin.anime.create', compact('titles'));
     }
     
     public function create(Request $request){
