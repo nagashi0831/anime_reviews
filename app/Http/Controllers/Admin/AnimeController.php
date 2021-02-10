@@ -4,16 +4,49 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Log;
 use App\User;
 use App\Anime;
 use Storage;
+use phpQuery;
+use Goutte\Client;
+
+//デプロイ先のxserverのファイルではhome/nagashi0831/reviewanime.work/anime_reviews/vendor/autoload.phpとなっているので、競合が起きないように注意
+require_once("/home/ec2-user/environment/anime_review/vendor/autoload.php");
 
 class AnimeController extends Controller
 {
     public function add()
     {
-        return view('admin.anime.create');
+        $client = new Client();
+        $japaSpells = ["あ行" ,"か行" ,"さ行" ,"た行" ,"な行" ,"は行" ,"ま行" ,"や行" ,"ら行" ,"わ行" ,"アルファベット"];
+        /*$japaSpells = ["a" ,"i" ,"u" ,"e" ,"o" ,"ka" ,"ki" ,"ku" ,"ku" ."ke" ,"ko" ,"sa" ,"shi" ,"su" ,"se" ,"so" ,
+        "ta" ,"chi" ,"tsu" ,"te" ,"to" ,"na" ,"ni" ,"nu" ,"ne" ,"no" ,"ha", "hi" ,"fu" ,"he" ,"ho" ,"ma" ,"mi" ,"mu" ,
+        "me" ,"mo" ,"ya" ,"yu" ,"yo" ,"ra" ,"ri" ,"ru" ,"re" ,"ro" ,"wa" ,"wo" ,"n"];*/
+        $titles = array();
+        
+        foreach ($japaSpells as $japaSpell) {
+            $url = "https://ja.wikipedia.org/wiki/日本のテレビアニメ作品一覧_".$japaSpell;
+            
+            $scraping = $client->request('GET', $url);
+            $title = $scraping->filter('body')->filter('.mw-body')->filter('#bodyContent')
+            ->filter('#mw-content-text')->filter('.mw-parser-output')
+            ->each(function ($title) use (&$titles){
+                
+                $title->filter('ul')
+                ->each(function ($title) use (&$titles){
+                    $title->filter('li')
+                    ->each(function ($title) use (&$titles){
+                        $title = $title->filter('a');
+                        if (count($title)) {
+                        array_push($titles, $title->text());
+                        }
+                    });
+                });
+            });
+        }
+        Log::debug($titles);
+        return view('admin.anime.create', compact('titles'));
     }
     
     public function create(Request $request){

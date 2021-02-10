@@ -1,15 +1,14 @@
 @extends('layouts.admin')
 
-@section('title', '作品追加申請画面')
+@section('title', 'レビュー投稿')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto">
-            <h2>作品追加申請画面</h2>
+            <h2 class="text-body">レビュー投稿フォーム</h2>
             <form action="{{ action('Admin\AnimeController@create') }}"
              method="post" enctype="multipart/form-data">
-                
                 @if (count($errors) > 0)
                 <ul>
                     @foreach($errors->all() as $e)
@@ -21,10 +20,11 @@
                     <label class="col-md-2">
                         タイトル
                     </label>
-                    <div class="col-md-10">
-                        <input type="text" 
-                        class="form-control" name="title" 
-                        value="{{ old('title') }}">
+                    <div class="col-md-10 searchArea">
+                        <input type="text" class="searchTitle form-control" name="title" 
+                        value="{{ old('title') }}" autocomplete="off">
+                        <div class="searchResultNum"></div>
+                        <div class="searchResultList"></div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -67,4 +67,10 @@
         </div>
     </div>
 </div>
+@foreach ($titles as $title)
+<ul class="test" hidden>
+    <li>{{ $title }}</li>
+</ul>
+@endforeach
+<script type="module" src="{{ asset('js/admin.js') }}"></script>
 @endsection
