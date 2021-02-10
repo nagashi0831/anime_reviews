@@ -1,52 +1,124 @@
 body {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #e3f542;
-    color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  color: #fff;
 }
 
 .navbar-laravel {
-    background-color: #000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .navbar-brend {
-    color:#fff !important;
+  color: #fff !important;
 }
 
 .nav-link {
-    color: #fff !important;
+  color: #fff !important;
+}
+
+.nav-item {
+  font-weight: bold;
 }
 
 .table-dark {
-    color: #fff;
+  color: #fff;
 }
 
 .list-group-item {
-    border-color: #fff;
-    background-color: #000;
+  border-color: #fff;
+  background-color: #000;
 }
 
 .login-box {
-    background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .login-header {
-    background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .login-body {
-    background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
-//投稿一覧の背景が白のため、index.bladeのcardクラスの文字を黒にする
 .card {
-    color:#000;
+  color: #000;
+}
+/*続きを見るを押した後の本文*/
+.show-message {
+  color: #000;
 }
 
-.login-box{
-    color:#fff;
+.login-box {
+  color: #fff;
+}
+/*投稿フォームの添え字*/
+.form-group {
+  color: #0067C0;
+}
+/*ナビゲーションバー上のロゴ*/
+.nav-logo {
+  margin-right: 30px;
+  color:yellow;
+  font-weight: bold;
 }
 
+.create-link {
+  margin-right:20px;
+  font-size: 25px;
+  font-weight: bold;
+}
 
+.copyright {
+  color: black;
+  text-align: center;
+}
+/*投稿一覧の吹き出し*/
 
+.indexFukidashi {
+  position: relative;
+  display: inline-block;
+  margin: 0 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.indexFukidashi:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+
+@media (max-width: 680px) {
+  .indexFukidashi {
+  position: relative;
+  display: inline-block;
+  margin: 15px 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.indexFukidashi:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+}

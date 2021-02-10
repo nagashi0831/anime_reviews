@@ -11,6 +11,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title')</title>
         <script src="{{ secure_asset('js/app.js') }}" defer></script>
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
         
         <link rel="dns-prefetch" http="https://fonts.gstatic.com">
         <!-- Google Web Fontsを使うためのAPI接続 -->

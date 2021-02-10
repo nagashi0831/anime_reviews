@@ -72,5 +72,9 @@
     <li>{{ $title }}</li>
 </ul>
 @endforeach
+<<<<<<< HEAD
 <script type="module" src="{{ asset('js/admin.js') }}"></script>
+=======
+<script src="{{ mix('js/admin.js') }}"></script>
+>>>>>>> origin/master
 @endsection

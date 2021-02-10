@@ -11,7 +11,10 @@ use Storage;
 use phpQuery;
 use Goutte\Client;
 
+<<<<<<< HEAD
 //デプロイ先のxserverのファイルではhome/nagashi0831/reviewanime.work/anime_reviews/vendor/autoload.phpとなっているので、競合が起きないように注意
+=======
+>>>>>>> origin/master
 require_once("/home/ec2-user/environment/anime_review/vendor/autoload.php");
 
 class AnimeController extends Controller
@@ -19,6 +22,7 @@ class AnimeController extends Controller
     public function add()
     {
         $client = new Client();
+<<<<<<< HEAD
         $japaSpells = ["あ行" ,"か行" ,"さ行" ,"た行" ,"な行" ,"は行" ,"ま行" ,"や行" ,"ら行" ,"わ行" ,"アルファベット"];
         /*$japaSpells = ["a" ,"i" ,"u" ,"e" ,"o" ,"ka" ,"ki" ,"ku" ,"ku" ."ke" ,"ko" ,"sa" ,"shi" ,"su" ,"se" ,"so" ,
         "ta" ,"chi" ,"tsu" ,"te" ,"to" ,"na" ,"ni" ,"nu" ,"ne" ,"no" ,"ha", "hi" ,"fu" ,"he" ,"ho" ,"ma" ,"mi" ,"mu" ,
@@ -46,6 +50,27 @@ class AnimeController extends Controller
             });
         }
         Log::debug($titles);
+=======
+        $japaSpells = ["a" ,"i" ,"u" ,"e" ,"o" ,"ka" ,"ki" ,"ku" ,"ku" ."ke" ,"ko" ,"sa" ,"shi" ,"su" ,"se" ,"so" ,
+        "ta" ,"chi" ,"tsu" ,"te" ,"to" ,"na" ,"ni" ,"nu" ,"ne" ,"no" ,"ha", "hi" ,"fu" ,"he" ,"ho" ,"ma" ,"mi" ,"mu" ,
+        "me" ,"mo" ,"ya" ,"yu" ,"yo" ,"ra" ,"ri" ,"ru" ,"re" ,"ro" ,"wa" ,"wo" ,"n"];
+        $titles = array();
+        foreach ($japaSpells as $japaSpell) {
+            $url = "https://anime.nicovideo.jp/search/anime/".$japaSpell.".html?from=nanime_anime-search_50";
+            $scraping = $client->request('GET', $url);
+            
+            $title = $scraping->filter('body')->filter('div')->filter('#__layout')
+            ->filter('div')->filter('._2jT-H')->filter('main')->filter('.sa__search-results')
+            ->filter('.sa__search-results__inner')->filter('ul')->filter('li')
+            ->each(function ($title) use (&$titles){
+                $title = $title->filter('a');
+                if (count($title)) {
+                    array_push($titles, $title->text());
+                }
+            });
+        }
+        
+>>>>>>> origin/master
         return view('admin.anime.create', compact('titles'));
     }
     

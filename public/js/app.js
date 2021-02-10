@@ -49806,6 +49806,7 @@ var app = new Vue({
   el: '#app'
 });
 
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
