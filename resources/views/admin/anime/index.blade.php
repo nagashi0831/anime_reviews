@@ -12,7 +12,7 @@
        @foreach ($posts as $post)
        {{-- この$postsはAnimeController@indexで定義された->all()
        によってレビュー内容が格納された変数--}}
-       <div class="card mb-4">
+       <div class="card mb-4 postCards">
             <div class="card-header">
                 <span class="float-left font-weight-bold">
                    {{ $post->title }} {{--アニメのタイトル--}}
@@ -61,6 +61,18 @@
                   　コメント {{ $post->comments->count() }}件
                </span>
                @endif
+               {{-- like_modelはLikeクラスのインスタンス --}}
+               @if($like_model->like_exist(Auth::id(), $post->id))
+               <p class="favorite-marke">
+                   <span class="js-like-toggle loved" href="" data-postid="{{ $post->id }}">♡</span>
+                   <span class="likesCount">{{ $post->likes_count }}</span>
+               </p>
+               @else
+               <p class="favorite-marke">
+                   <span class="js-like-toggle nonLoved" href="" data-postid="{{ $post->id }}">♡</span>
+                   <span class="likesCount">{{ $post->likes_count }}</span>
+               </p>
+               @endif
            </div>
        </div>
        @endforeach
@@ -68,4 +80,5 @@
            {{ $posts->links() }}
        </div> 
    </div>
-  @endsection
+   <script type="module" src="{{ asset('js/like.js') }}"></script>
+@endsection

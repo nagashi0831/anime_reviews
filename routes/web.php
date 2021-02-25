@@ -31,6 +31,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('anime/message/{partner}', 'Admin\MessagesController@index');
     Route::post('anime/message/send', 'Admin\MessagesController@store');
     Route::get('anime/index', 'Admin\MessagesController@indexMem');//chat一覧画面のルート
+    Route::post('anime/ajaxlike', 'Admin\AnimeController@ajaxlike');//いいねを押したときのルート
 });
 
 Auth::routes();

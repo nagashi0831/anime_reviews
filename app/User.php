@@ -43,6 +43,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Anime');
     }
     
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
+    
     //LinkedSocialAccountモデルに対して1対多のリレーションを貼るための関数
     public function accounts(){
         return $this->hasMany('App\LinkedSocialAccount');

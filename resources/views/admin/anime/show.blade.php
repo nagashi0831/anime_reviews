@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <a class="card-link" href="{{ action('Admin\AnimeController@index') }}">
-        ↩アニメ一覧に戻る
+        投稿一覧に戻る
     </a>
     <div class="border p-4">
         <div class="show-message">
