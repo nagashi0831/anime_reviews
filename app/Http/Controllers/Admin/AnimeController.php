@@ -7,14 +7,13 @@ use App\Http\Controllers\Controller;
 use Log;
 use App\User;
 use App\Anime;
+use App\Like;
 use Storage;
 use phpQuery;
 use Goutte\Client;
+use Illuminate\Support\Facades\Auth;
 
-<<<<<<< HEAD
 //デプロイ先のxserverのファイルではhome/nagashi0831/reviewanime.work/anime_reviews/vendor/autoload.phpとなっているので、競合が起きないように注意
-=======
->>>>>>> origin/master
 require_once("/home/ec2-user/environment/anime_review/vendor/autoload.php");
 
 class AnimeController extends Controller
@@ -22,7 +21,6 @@ class AnimeController extends Controller
     public function add()
     {
         $client = new Client();
-<<<<<<< HEAD
         $japaSpells = ["あ行" ,"か行" ,"さ行" ,"た行" ,"な行" ,"は行" ,"ま行" ,"や行" ,"ら行" ,"わ行" ,"アルファベット"];
         /*$japaSpells = ["a" ,"i" ,"u" ,"e" ,"o" ,"ka" ,"ki" ,"ku" ,"ku" ."ke" ,"ko" ,"sa" ,"shi" ,"su" ,"se" ,"so" ,
         "ta" ,"chi" ,"tsu" ,"te" ,"to" ,"na" ,"ni" ,"nu" ,"ne" ,"no" ,"ha", "hi" ,"fu" ,"he" ,"ho" ,"ma" ,"mi" ,"mu" ,
@@ -49,28 +47,6 @@ class AnimeController extends Controller
                 });
             });
         }
-        Log::debug($titles);
-=======
-        $japaSpells = ["a" ,"i" ,"u" ,"e" ,"o" ,"ka" ,"ki" ,"ku" ,"ku" ."ke" ,"ko" ,"sa" ,"shi" ,"su" ,"se" ,"so" ,
-        "ta" ,"chi" ,"tsu" ,"te" ,"to" ,"na" ,"ni" ,"nu" ,"ne" ,"no" ,"ha", "hi" ,"fu" ,"he" ,"ho" ,"ma" ,"mi" ,"mu" ,
-        "me" ,"mo" ,"ya" ,"yu" ,"yo" ,"ra" ,"ri" ,"ru" ,"re" ,"ro" ,"wa" ,"wo" ,"n"];
-        $titles = array();
-        foreach ($japaSpells as $japaSpell) {
-            $url = "https://anime.nicovideo.jp/search/anime/".$japaSpell.".html?from=nanime_anime-search_50";
-            $scraping = $client->request('GET', $url);
-            
-            $title = $scraping->filter('body')->filter('div')->filter('#__layout')
-            ->filter('div')->filter('._2jT-H')->filter('main')->filter('.sa__search-results')
-            ->filter('.sa__search-results__inner')->filter('ul')->filter('li')
-            ->each(function ($title) use (&$titles){
-                $title = $title->filter('a');
-                if (count($title)) {
-                    array_push($titles, $title->text());
-                }
-            });
-        }
-        
->>>>>>> origin/master
         return view('admin.anime.create', compact('titles'));
     }
     
@@ -107,6 +83,7 @@ class AnimeController extends Controller
         //cond_titleは検索窓の内容を取得
         $cond_title = $request->cond_title;
         $users = User::get();
+        $like_model = new Like;
         
         if($cond_title != ''){
             //検索されたら検索結果を取得する
@@ -117,9 +94,17 @@ class AnimeController extends Controller
             //それ以外はすべての投稿を取得する
             $posts = Anime::orderBy('created_at','desc')->paginate(10);
         }
-       return view('admin.anime.index',['posts' => $posts, 
-       'users' => $users,
-       'cond_title' =>$cond_title]);
+        
+        foreach ($posts as $post) {
+            $likes_count = Anime::findOrFail($post->id)->loadCount('likes')->likes_count;
+            $post->likes_count = $likes_count;
+        }
+        Log::debug($posts);
+        return view('admin.anime.index',['posts' => $posts, 
+        'users' => $users,
+        'like_model' => $like_model,
+        'cond_title' =>$cond_title]);
+        
     }
     
     public function show(Request $request)
@@ -188,6 +173,36 @@ class AnimeController extends Controller
         //get()でデータ取得
         $posts = Anime::orderBy('created_at','desc')->get();
         return view('admin.anime.front',['posts' => $posts]);
+    }
+    
+    public function ajaxlike(Request $request)
+    {
+        $id = Auth::user()->id;
+        $anime_id = $request->anime_id;
+        $like = new Like;
+        $post = Anime::findOrFail($anime_id);
+        
+        //既に見たことある！しているなら
+        if ($like->like_exist($id, $anime_id)) {
+            //likesテーブルのレコードを削除
+            $like = Like::where('anime_id', $anime_id)->where('user_id', $id)->delete();
+        } else {
+            //まだ見たことある！していないならlikesテーブルに新しいレコードを作成する
+            $like = new Like;
+            $like->anime_id = $request->anime_id;
+            $like->user_id = Auth::user()->id;
+            $like->save();
+        }
+        
+        //loadCountとすればリレーションの数を##_countという形で取得できる
+        $postLikesCount = $post->loadCount('likes')->likes_count;
+        
+        //1つの変数にajaxに渡す値をまとめ
+        $json = [
+            'postLikesCount' => $postLikesCount,
+            ];
+            //下記の記述でajaxに引数の値を返す
+            return response()->json($json);
     }
     
 }

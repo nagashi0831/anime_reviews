@@ -28,6 +28,10 @@ body {
   color: #fff;
 }
 
+.postCards {
+  caret-color: transparent;
+}
+
 .list-group-item {
   border-color: #fff;
   background-color: #000;
@@ -108,6 +112,15 @@ body {
   border-top: 15px solid #e0edff;
 }
 
+/*通常はハートが黒色で、いいねしたときだけ赤色にする*/
+.nonLoved {
+  color: black;
+}
+
+.loved {
+  color: red;
+}
+/*スマホ画面*/
 @media (max-width: 680px) {
   .indexFukidashi {
     position: relative;
@@ -130,9 +143,4 @@ body {
     border: 15px solid transparent;
     border-top: 15px solid #e0edff;
   }
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> origin/master
